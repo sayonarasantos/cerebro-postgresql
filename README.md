@@ -1,7 +1,7 @@
 # Lembre de comandos
 
 
-## psql commands
+## Comandos psql
 
 - Conectar com servidor remoto:
 ```bash
@@ -14,7 +14,7 @@ psql -U user_name -h host_name -W -d database_name < sql_retore_file
 ```
 
 
-## SQL queries
+## Comandos SQL
 
 - Remover banco:
 ```sql
