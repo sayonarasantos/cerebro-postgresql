@@ -32,7 +32,7 @@ function configure_access(){
             useradmin=$PROD_DB_USER_ADMIN
             ;;
         * )
-            printf "* The environment-id value is a invalid option.\n"
+            printf "* The environment-id value is an invalid option.\n"
             exit 1
             ;;
     esac
@@ -111,8 +111,8 @@ help_msg="
 
   MANDATORY ARGUMENTS:
     -i | --environment-id    Server database environment-id. Options: test or prod.
-    -d | --database         Database name that will be configureted. Example: data_test.
-    -u | --username         User that will be configureted. Example: beyonce.
+    -d | --database         Database name that will be configured. Example: data_test.
+    -u | --username         User that will be configured. Example: beyonce.
     -r | --role             User role. Options: dev, app or adm.
                                 - dev: Simple user (Only SELECT permission)
                                 - app: User for application (SELECT, UPDATE, INSERT, DELETE permissions)
