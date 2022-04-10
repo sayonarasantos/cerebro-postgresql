@@ -1,4 +1,4 @@
-# Lembre de comandos
+# Lembrete de comandos
 
 
 ## Comandos psql
