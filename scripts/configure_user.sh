@@ -2,8 +2,10 @@
 
 
 #### Script to create and configure database users
-## Requirements: run on a debian distribution, install the postgresql-client package and configure the variables,
-## with .bashrc:
+## Requirements: run on a debian distribution,
+## install the postgresql-client package ("sudo apt install postgresql-client"),
+## make this script executable ("sudo chmod 744 configure_user.sh")
+## and configure the variables, in .bashrc:
 # export PROD_DB_HOST=
 # export PROD_DB_PORT=
 # export PROD_DB_USER_ADMIN=
@@ -104,10 +106,10 @@ mandatory_args=5
 help_msg="
 * This script create and configure database users.
   Usage:
-    configure_user_advanced [MANDATORY ARGUMENTS]... [OPTIONAL ARGUMENTS]
+    ./configure_user.sh [MANDATORY ARGUMENTS]... [OPTIONAL ARGUMENTS]
 
   Example:
-    ./configure_user_advanced.sh -i test -d data_test -u beyonce -r adm -s 'schema1 schema2' -c
+    ./configure_user.sh -i test -d data_test -u beyonce -r adm -s 'schema1 schema2' -c
 
   MANDATORY ARGUMENTS:
     -i | --environment-id    Server database environment-id. Options: test or prod.
