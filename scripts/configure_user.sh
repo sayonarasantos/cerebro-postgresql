@@ -121,10 +121,10 @@ help_msg="
 
   OPTIONAL ARGUMENTS:
     -c | --create-user      Booolean parameter. User if you want create a new user.
-        -h | --help             Prints this help.\n\n"
+    -h | --help             Prints this help.\n\n"
 
 
-if [[ -x "$(apt list postgresql-client)" ]]; then
+if [[ -x "$(dpkg -l postgresql-client)" ]]; then
     printf "* Install the postgresql-client package before use this script.\n"
     exit 1
 fi
