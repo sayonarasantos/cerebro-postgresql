@@ -2,7 +2,7 @@
 
 
 #### Script to create and configure database users
-## Requirements: install the psql package and configure the variables,
+## Requirements: run on a debian distribution, install the postgresql-client package and configure the variables,
 ## with .bashrc:
 # export PROD_DB_HOST=
 # export PROD_DB_PORT=
@@ -12,10 +12,10 @@
 # export TEST_DB_USER_ADMIN=
 ##  or here (uncomment the following lines):
 # PROD_DB_HOST=
-# PROD_DB_PORT=5432
+# PROD_DB_PORT=
 # PROD_DB_USER_ADMIN=
 # TEST_DB_HOST=
-# TEST_DB_PORT=5432
+# TEST_DB_PORT=
 # TEST_DB_USER_ADMIN=
 
 
@@ -93,7 +93,7 @@ function execute_sqlcmd(){
     # printf "* SQL command:\n\n  $sqlcmd_full\n" | sed 's/\;/\;\n /g'
     printf "\n* SQL command:$sqlcmd_full\n\n"
 
-    psql -t -A -h "$host" -U "$useradmin" -d "$database" -c "$sqlcmd_full"
+    psql -t -A -h "$host" -p "$port" -U "$useradmin" -d "$database" -c "$sqlcmd_full"
 }
 
 
@@ -124,8 +124,8 @@ help_msg="
         -h | --help             Prints this help.\n\n"
 
 
-if [[ -x "$(psql --version)" ]]; then
-    printf "* Install the psql package before use this script.\n"
+if [[ -x "$(apt list postgresql-client)" ]]; then
+    printf "* Install the postgresql-client package before use this script.\n"
     exit 1
 fi
 
